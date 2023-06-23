@@ -22,8 +22,8 @@ class AppointmentView(View):
         send_mail( 
             subject=f'{appointment.client_name} {appointment.date.strftime("%Y-%M-%d")}',  # имя клиента и дата записи будут в теме для удобства
             message=appointment.message, # сообщение с кратким описанием проблемы
-            from_email='il.igiza@yandex.ru', # здесь указываете почту, с которой будете отправлять (об этом попозже)
-            recipient_list=[] # здесь список получателей. Например, секретарь, сам врач и так далее
+            from_email='', # здесь указываете почту, с которой будете отправлять (об этом попозже)
+            recipient_list=['',] # здесь список получателей. Например, секретарь, сам врач и так далее
         )
  
         return redirect('make_appointment')
